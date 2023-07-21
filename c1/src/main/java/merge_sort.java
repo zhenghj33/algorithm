@@ -37,6 +37,14 @@ public class merge_sort {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
         int[] q = new int[n];
-
+        String[] str = br.readLine().split(" ");
+        for (int i = 0; i < q.length; i++) {
+            q[i] = Integer.parseInt(str[i]);
+        }
+        merge_sort(q, 0, q.length - 1);
+        for (int i = 0; i < q.length; i++) {
+            if (i == q.length - 1) System.out.print(q[i]);
+            else System.out.print(q[i] + " ");
+        }
     }
 }

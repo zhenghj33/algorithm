@@ -14,12 +14,13 @@ public class preSum {
         int n = Integer.parseInt(s1[0]);//原数据有几个数
         int m = Integer.parseInt(s1[1]);//需要求哪几组的和
 
-        String[] arr = br.readLine().split(" ");//读原数据
-        for (int i = 0; i <= n - 1; i++) a[i] = Integer.parseInt(arr[i]);//这一行有问题
+        String[] arr = br.readLine().split(" ");//读源数据
+        for (int i = 0; i <= n - 1; i++) a[i] = Integer.parseInt(arr[i]);
 
-        //开始求和
-        for (int i = 1; i < n; i++) {
-            s[i] = s[i - 1] + a[i];
+        //开始求和,for循环条件容易出错
+        s[0] = 0;
+        for (int i = 1; i <= n; i++) {
+            s[i] = s[i - 1] + a[i-1];
         }
 
         while (m-- > 0) {

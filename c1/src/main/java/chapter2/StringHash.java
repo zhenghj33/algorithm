@@ -1,10 +1,8 @@
-package chaper2;
+package chapter2;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
-import javax.sound.midi.Soundbank;
 
 /**
  * 字符串哈希

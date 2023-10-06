@@ -4,18 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Vector;
-
-import javax.swing.text.GapContent;
 
 /**
  * BellmanFord 边权可能为负数
- * 
+ *
  * @author huijuan zheng
  *
  */
 public class BellmanFord {
-	static int N = 510;
+	static int N = 10010;
 	static int max = 0x3f3f3f3f;
 	static int n;
 	static int k;
@@ -79,9 +76,9 @@ public class BellmanFord {
 					continue;// 如果一个点到源点距离还是无穷大，没必要去找他的邻边了
 				// 每个点的邻边
 				for (int j2 = h[j]; j2 != max; j2 = ne[j2]) {
-					// 松弛操作
-					if (d[e[j2]] > d[j] + w[j2]) {
-						d[e[j2]] = d[j] + w[j2];
+					// 松弛操作（注意用上一轮的点来更新这一轮的点）
+					if (d[e[j2]] > back[j] + w[j2]) {
+						d[e[j2]] = back[j] + w[j2];
 						flag = true;
 					}
 				}

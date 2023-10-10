@@ -11,7 +11,7 @@ import java.io.InputStreamReader;
  *
  */
 public class MultPack_01 {
-	static int N = 10100;
+	static int N = 12000;
 	static int[] f = new int[N];
 
 	// 物品数量按二进制拆分
